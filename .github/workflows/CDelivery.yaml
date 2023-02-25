@@ -59,7 +59,7 @@ jobs:
           projectBaseDir: .
           args: >
             -Dsonar.organization=team-3
-            -Dsonar.projectKey=team-3_sonarqube-for-project
+            -Dsonar.projectKey=team-3_sonarqube-for-project-1
             -Dsonar.sources=./
     
       
