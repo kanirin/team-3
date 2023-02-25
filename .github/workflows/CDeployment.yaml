@@ -6,17 +6,19 @@ env:
   project_id:         "${{ secrets.PROJECT_ID }}"
   repository:         "us-central1-docker.pkg.dev/${{ secrets.PROJECT_ID }}/project-team3/wordpress"
   cluster_name:       "project-cluster"
-  helm_repository:    "https://github.com/farrukh90/custom_helm_chart.git"
+  helm_repository:    "https://github.com/kanirin/team-3.git"
   google_domain_name: "${{ secrets.GOOGLE_DOMAIN_NAME }}"
   environment:        "dev"
   
 name: ContinuousDeployment 
 
 on:
-  workflow_run:
-    workflows: ["ContinuousDelivery"]
-    types:
-      - completed
+  push:
+    branches: ["master"]
+#   workflow_run:
+#     workflows: ["ContinuousDelivery"]
+#     types:
+#       - completed
 
 # A workflow run is made up of one or more jobs tat can run sequentially or in parallel
 jobs:
